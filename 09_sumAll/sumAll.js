@@ -9,7 +9,7 @@ const sumAll = function(start, end) {
     // Swap for iterator
     if (start > end) [start, end] = [end, start];
 
-    let sum = 0;
+    let sum = 0;s
     for (let i = start; i <= end; i++) {
         sum += i;
     }
