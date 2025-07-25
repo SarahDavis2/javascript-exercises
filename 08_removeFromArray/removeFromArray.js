@@ -1,15 +1,5 @@
 const removeFromArray = function(arr, ...removeArgs) {
-    return arr.filter( (item) => {
-        let addToFlag = true;
-        for (let arg of removeArgs) {
-            if (item === arg) {
-                addToFlag = false;
-                break;
-            }    
-        }
-
-        return addToFlag;
-    });
+    return arr.filter(item => !removeArgs.includes(item))
 };
 
 // Do not edit below this line
