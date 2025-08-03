@@ -1,17 +1,15 @@
 const palindromes = function (str) {
-    let isPalindrome = true;
+    const ALPHANUMERICAL = 'abcdefghijklmnopqrstuvwxyz0123456789';
 
-    str = str.toLowerCase();
-    // Remove symbols and punctuation and spaces
-    str = str.replace(/[^a-z0-9]/g, ''); 
+    const cleanedStr = str
+        .toLowerCase()
+        .split('')
+        .filter((char) => ALPHANUMERICAL.includes(char))
+        .join('');
     
-    for (let count = 0; count < str.length; count++) {
-        if (str.at(count) != str.at(-count - 1)) {
-            isPalindrome = false;
-        }
-    }
+    const reversedStr = cleanedStr.split('').reverse().join('');
 
-    return isPalindrome;
+    return cleanedStr === reversedStr;
 };
 
 // Do not edit below this line
